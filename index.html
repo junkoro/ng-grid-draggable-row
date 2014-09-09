@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>ng-grid draggable row plugin sample</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="ng-grid/ng-grid.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="ng-grid/ng-grid-2.0.8.min.js"></script>
+    <script src="js/ng-grid.plugin.draggablerow.min.js"></script>
+    <script src="js/app.min.js"></script>
+
+  </head>
+
+  <body ng-app="app" ng-controller="ctrl">
+
+    <!-- START container -->
+    <div class="container">
+
+      <!-- header -->
+      <div class="page-header">
+        <h2><b>ng-grid draggable row plugin sample</b></h2>
+        <small class="text-muted">
+          Please drag row to reorder. Multiple rows dragging is also supported.
+        </small>
+      </div>
+
+      <!-- main content -->
+      <section>
+
+        <!-- dragging multiple rows image (must be hidden some how) -->
+        <div id="dragIconMultiRows">
+          <i class="glyphicon glyphicon-file"></i>
+          <span class="badge">{{dragRowNum}}</span>
+        </div>
+
+        <!-- ng-grid -->
+        <div class="gridStyle" ng-grid="gridOpt"></div>
+
+      </section>
+
+      <!-- footer -->
+      <hr>
+      <div>
+        By <a href="https://github.com/junkoro" target="_blank">@junkoro</a>.
+        Check this out on GitHub.
+        <a href='https://github.com/junkoro/ng-grid-draggable-row' title='junkoro/ng-grid-draggable-row' target="_blank">ng-grid-draggable-row</a>
+      </div>
+
+    </div>
+    <!-- END container -->
+
+  </body>
+
+</html>
