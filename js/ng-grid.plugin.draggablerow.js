@@ -90,7 +90,7 @@ function ngGridDraggableRow(initialSortField) {
     }
 
     // Update rowSrc & rowCache
-    rowsSrc = $scope[grid.config.data];
+    rowsSrc = $scope.$eval(grid.config.data);
     rowItems = grid.rowCache;
 
     // Get seleted rowItems as rows to move.
@@ -265,8 +265,11 @@ function ngGridDraggableRow(initialSortField) {
   function changeRowOrder(rowItemsMove, rowItemDst) {
 
     // Insert position
-    var insPos = rowItems.indexOf(rowItemDst) + 1;
-    //console.log("changeRowOrder() insPos=" + insPos);
+    if(rowItemDst == null || rowItemsMove[0].rowIndex < rowItemDst.rowIndex) {
+        var insPos = rowItems.indexOf(rowItemDst) + 1;
+    } else {
+        var insPos = rowItems.indexOf(rowItemDst);
+    }
 
     // Replace rows to dummy rows.
     var rowsDummy = [];
