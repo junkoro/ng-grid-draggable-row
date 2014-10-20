@@ -268,7 +268,7 @@ function ngGridDraggableRow(initialSortField) {
     if(rowItemDst == null || rowItemsMove[0].rowIndex < rowItemDst.rowIndex) {
         var insPos = rowItems.indexOf(rowItemDst) + 1;
     } else {
-    var insPos = rowItems.indexOf(rowItemDst) + 0;
+        var insPos = rowItems.indexOf(rowItemDst);
     }
 
     // Replace rows to dummy rows.
